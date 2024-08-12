@@ -1,39 +1,21 @@
 {
-  "package": {
-    "productName": "WeRead",
-    "version": "1.0.0"
-  },
-  "tauri": {
-    "security": {
-      "csp": null,
-      "dangerousRemoteDomainIpcAccess": [
-        {
-          "domain": "weread.qq.com",
-          "windows": ["pake"],
-          "enableTauriAPI": true
-        }
-      ]
-    },
-    "updater": {
-      "active": false
-    },
-    "systemTray": {
-      "iconPath": "png/icon_512.png",
-      "iconAsTemplate": false
-    },
-    "allowlist": {
-      "all": true,
-      "fs": {
-        "all": true,
-        "scope": ["$DOWNLOAD/*"]
-      }
-    }
-  },
   "build": {
-    "withGlobalTauri": true,
-    "devPath": "../dist",
-    "distDir": "../dist",
     "beforeBuildCommand": "",
+    "frontendDist": "../dist",
     "beforeDevCommand": ""
+  },
+  "plugins": {},
+  "productName": "WeRead",
+  "version": "1.0.0",
+  "app": {
+    "security": {
+      "csp": null
+    },
+    "trayIcon": {
+      "iconPath": "png/icon_512.png",
+      "iconAsTemplate": false,
+      "id": "pake-tray"
+    },
+    "withGlobalTauri": true
   }
 }

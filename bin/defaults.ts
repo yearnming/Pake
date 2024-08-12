@@ -11,22 +11,21 @@ export const DEFAULT_PAKE_OPTIONS: PakeCliOptions = {
   disabledWebShortcuts: false,
   activationShortcut: '',
   userAgent: '',
-  showSystemTray: false,
+  showSystemTray: true,
   multiArch: false,
   targets: 'deb',
   useLocalFile: false,
   systemTrayIcon: '',
+  proxyUrl: "http://127.0.0.1:7897",
   debug: false,
   inject: [],
   safeDomain: [],
-  installerLanguage: 'en-US',
 };
 
 // Just for cli development
 export const DEFAULT_DEV_PAKE_OPTIONS: PakeCliOptions & { url: string } = {
   ...DEFAULT_PAKE_OPTIONS,
-  url: 'https://weread.qq.com',
-  name: 'WeRead',
-  safeDomain: ['weread.qq.com'],
+  url: 'https://chatgpt.com/',
+  name: 'Chatgpt',
   hideTitleBar: true,
 };

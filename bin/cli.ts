@@ -33,6 +33,7 @@ program
   .option('--multi-arch', 'Only for Mac, supports both Intel and M1', DEFAULT.multiArch)
   .option('--inject [injects...]', 'Injection of .js or .css Files', DEFAULT.inject)
   .option('--debug', 'Debug build and more output', DEFAULT.debug)
+  .option('--proxy-url', "Proxy URL", DEFAULT.proxyUrl)
   .addOption(new Option('--user-agent <string>', 'Custom user agent').default(DEFAULT.userAgent).hideHelp())
   .addOption(
     new Option('--targets <string>', 'Only for Linux, option "deb" or "appimage"').default(DEFAULT.targets).hideHelp(),
@@ -51,9 +52,6 @@ program
   .addOption(new Option('--show-system-tray', 'Show system tray in app').default(DEFAULT.showSystemTray).hideHelp())
   .addOption(
     new Option('--system-tray-icon <string>', 'Custom system tray icon').default(DEFAULT.systemTrayIcon).hideHelp(),
-  )
-  .addOption(
-    new Option('--installer-language <string>', 'Installer language').default(DEFAULT.installerLanguage).hideHelp(),
   )
   .version(packageJson.version, '-v, --version', 'Output the current version')
   .action(async (url: string, options: PakeCliOptions) => {
